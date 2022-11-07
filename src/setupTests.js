@@ -2,4 +2,10 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
+
+jest.mock("recharts", () => ({
+  ResponsiveContainer: jest.fn().mockImplementation(({ children }) => children),
+//   PieChart: jest.fn().mockImplementation(({ children }) => children),
+//   Pie: jest.fn().mockImplementation(({ children }) => children),
+}));
